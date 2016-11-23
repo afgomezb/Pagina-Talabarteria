@@ -22,4 +22,6 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  database: talabarteria_production
+  username: talabarteria
+  password: <%= ENV['TALABARTERIA_DATABASE_PASSWORD'] %>
