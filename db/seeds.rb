@@ -9,5 +9,5 @@ puts 'Creating User'
 
 User.destroy_all
 User.create!([
-  {email: "hugoramirezvelez@gmail.com", password: "talabarteriaapp", password_confirmation: "talabarteriaapp")}
+  {email: "hugoramirezvelez@gmail.com", password: "talabarteriaapp", password_confirmation: "talabarteriaapp"	}
 ])
