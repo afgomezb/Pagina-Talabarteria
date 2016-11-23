@@ -1,0 +1,30 @@
+<div class="row titulo">
+  <h1>Productos</h1>
+</div>
+<div class="row large-padding">
+  <% if user_signed_in? %>
+  <%= link_to 'Nuevo Producto', new_product_path, class: "btn btn-primary btn-xl page-scroll" %>
+  <% end %>
+</div>
+<div class="row"> 
+      <% @products.each do |product| %>
+      <div class="cuadro col-sm-12" style="width: 80%;margin: 0 auto;"">
+        <div class="field center-xs">
+          <%= image_tag product.cover.url(:thumb) %>    
+        </div>
+        <div class="field center-xs">
+          <%= product.name %>
+        </div>
+        <div class="field center-xs">
+          <div class="btn be-red white">
+            <%= link_to 'Ver', product %>
+          </div>  
+          <% if user_signed_in? %>
+            <div class="btn be-red">
+              <%= link_to 'Eliminar', product, method: :delete, data: { confirm: '¿Estás Seguro?' } %>
+            </div>
+          <% end %>
+        </div> 
+      </div>
+      <% end %>
+</div>
